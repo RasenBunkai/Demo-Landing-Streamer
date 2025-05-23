@@ -5,70 +5,71 @@ import Twitter from "./svg/Twitter.astro";
 ---
 
 <header
-  class="text-white sticky top-0 z-50 w-full border-b border-purple-900/20 bg-black backdrop-blur-sm">
-  <div class="container flex h-16 items-center justify-between">
-    <div class="flex items-center gap-2">
-      <div class="relative h-8 w-8">
-        <div
-          class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-600 to-pink-500">
-        </div>
-        <div
-          class="absolute inset-[2px] flex items-center justify-center rounded-full bg-black text-lg font-bold">
-          Z
-        </div>
-      </div>
-      <span class="text-xl font-bold tracking-tight">ZetaStream</span>
-    </div>
-    <nav class="hidden md:flex items-center gap-6">
+  class="text-white sticky top-0 z-50 w-full border-b border-purple-900/20 bg-black backdrop-blur-lg">
+  <div
+    class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
+    <!-- Logo y marca -->
+    <div class="flex items-center gap-3">
       <a
         href="#home"
-        class="text-sm font-medium hover:text-purple-400 transition-colors">
+        class="group flex items-center gap-2 focus-visible:outline-none">
+        <div class="relative h-8 w-8">
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-600 to-pink-500">
+          </div>
+          <div
+            class="absolute inset-[2px] flex items-center justify-center rounded-full bg-black text-lg font-bold text-purple-400">
+            Z
+          </div>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">
+          ZetaStream
+        </span>
+      </a>
+    </div>
+
+    <!-- Navegación principal -->
+    <nav
+      class="hidden md:flex items-center gap-3 text-sm font-medium transition-colors">
+      <a href="#home" class="px-2 hover:text-purple-400" aria-current="page">
         Inicio
       </a>
-      <a
-        href="#schedule"
-        class="text-sm font-medium hover:text-purple-400 transition-colors">
-        Horarios
-      </a>
-      <a
-        href="#clips"
-        class="text-sm font-medium hover:text-purple-400 transition-colors">
-        Clips
-      </a>
-      <a
-        href="#blog"
-        class="text-sm font-medium hover:text-purple-400 transition-colors">
-        Blog
-      </a>
-      <a
-        href="#contact"
-        class="text-sm font-medium hover:text-purple-400 transition-colors">
-        Contacto
-      </a>
+      <a href="#schedule" class="px-2 hover:text-purple-400"> Horarios </a>
+      <a href="#clips" class="px-2 hover:text-purple-400"> Clips </a>
+      <a href="#blog" class="px-2 hover:text-purple-400"> Blog </a>
+      <a href="#contact" class="px-2 hover:text-purple-400"> Contacto </a>
     </nav>
+
+    <!-- Redes sociales y CTA -->
     <div class="flex items-center gap-4">
-      <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer">
-        <Twitch
-          class="h-5 w-5 text-purple-400 hover:text-purple-300 transition-colors"
-        />
+      <a
+        href="https://www.twitch.tv/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="">
+        <Twitch class="w-5 hover:-translate-y-1 transition" />
         <span class="sr-only">Twitch</span>
       </a>
-      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-        <Youtube
-          class="h-5 w-5 text-purple-400 hover:text-purple-300 transition-colors"
-        />
+      <a
+        href="https://youtube.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="">
+        <Youtube class="w-6 hover:-translate-y-1 transition" />
         <span class="sr-only">YouTube</span>
       </a>
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-        <Twitter
-          class="h-5 w-5 text-purple-400 hover:text-purple-300 transition-colors"
-        />
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="">
+        <Twitter class="w-5 hover:-translate-y-1 transition" />
         <span class="sr-only">Twitter</span>
       </a>
       <button
-        class="hidden rounded-full bg-gradient-to-br from-purple-600 to-pink-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gradient-to-bl md:block">
-        Donar</button
-      >
+        class="font-semibold px-3 py-2 border border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 rounded-md cursor-pointer transition-colors duration-200">
+        Donar
+      </button>
     </div>
   </div>
 </header>
