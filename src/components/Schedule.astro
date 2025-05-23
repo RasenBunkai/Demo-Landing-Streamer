@@ -1,0 +1,41 @@
+---
+import ScheduleCard from "./ScheduleCard.astro";
+---
+
+<section
+  id="schedule"
+  class="flex flex-col justify-center py-16 bg-black gap-5">
+  <h2
+    class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Horario de Streams
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-full mx-auto px-4">
+    <ScheduleCard
+      CardTitle="Lunes"
+      CardDate="9:00 PM"
+      CardContent="Noche de Minecraft"
+    />
+    <ScheduleCard
+      CardTitle="Martes"
+      CardDate="8:00 PM"
+      CardContent="Noche de Valorant"
+    />
+    <ScheduleCard
+      CardTitle="Miércoles"
+      CardDate="8:00 PM"
+      CardContent="Noche de Valorant"
+    />
+    <ScheduleCard
+      CardTitle="Jueves"
+      CardDate="9:00 PM"
+      CardContent="Noche de Minecraft"
+    />
+    <ScheduleCard
+      CardTitle="Viernes"
+      CardDate="10:00 PM"
+      CardContent="Noche de Among Us"
+    />
+  </div>
+  <p class="text-center font-semibold mt-8 text-gray-400">
+    Todos los horarios están en hora de España (CET/CEST)
+  </p>
+</section>

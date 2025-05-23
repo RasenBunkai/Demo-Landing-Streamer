@@ -1,0 +1,98 @@
+---
+import Youtube from "./svg/Youtube.astro"
+import ExternalLink from "./svg/ExternalLink.astro"
+---
+
+<section
+    id="clips"
+    class="py-16 bg-gradient-to-b from-black to-purple-950/20">
+    <div class="container">
+        <h2 class="text-3xl font-bold mb-8 text-center">
+            <span
+                class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                Clips Destacados
+            </span>
+        </h2>
+        <div class="flex justify-center mb-8">
+            <button id="recentBtn" class="px-4 py-2 mx-2 bg-purple-700 text-white rounded hover:bg-purple-800 focus:outline-none" onclick="showClips('recent')">
+                Recientes
+            </button>
+            <button id="popularBtn" class="px-4 py-2 mx-2 bg-gray-800 text-white rounded hover:bg-purple-800 focus:outline-none" onclick="showClips('popular')">
+                Populares
+            </button>
+        </div>
+        <div id="recentClips" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+            <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+        </div>
+        <div id="popularClips" class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
+            <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+            <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden">
+                <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <button
+                class="border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 flex items-center justify-center px-4 py-2 rounded">
+                <Youtube class="mr-2 h-4 w-4" />
+                Ver más en YouTube
+                <ExternalLink class="ml-2 h-4 w-4" />
+            </button>
+        </div>
+    </div>
+    <script type="module" lang="ts">
+        function showClips(type) {
+            const recent = document.getElementById('recentClips');
+            const popular = document.getElementById('popularClips');
+            const recentBtn = document.getElementById('recentBtn');
+            const popularBtn = document.getElementById('popularBtn');
+            if (!recent || !popular || !recentBtn || !popularBtn) return;
+
+            if (type === 'recent') {
+                recent.classList.remove('hidden');
+                popular.classList.add('hidden');
+                recentBtn.classList.add('bg-purple-700');
+                recentBtn.classList.remove('bg-gray-800');
+                popularBtn.classList.remove('bg-purple-700');
+                popularBtn.classList.add('bg-gray-800');
+            } else {
+                recent.classList.add('hidden');
+                popular.classList.remove('hidden');
+                recentBtn.classList.remove('bg-purple-700');
+                recentBtn.classList.add('bg-gray-800');
+                popularBtn.classList.add('bg-purple-700');
+                popularBtn.classList.remove('bg-gray-800');
+            }
+        }
+
+        // Default to recent
+        if (typeof window !== "undefined") {
+            showClips('recent');
+        }
+
+        // Attach to window for inline onclick
+        window.showClips = showClips;
+    </script>
+</section>
