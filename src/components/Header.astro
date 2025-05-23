@@ -1,0 +1,74 @@
+---
+import Twitch from "./svg/Twitch.astro";
+import Youtube from "./svg/Youtube.astro";
+import Twitter from "./svg/Twitter.astro";
+---
+
+<header
+  class="text-white sticky top-0 z-50 w-full border-b border-purple-900/20 bg-black backdrop-blur-sm">
+  <div class="container flex h-16 items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="relative h-8 w-8">
+        <div
+          class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-600 to-pink-500">
+        </div>
+        <div
+          class="absolute inset-[2px] flex items-center justify-center rounded-full bg-black text-lg font-bold">
+          Z
+        </div>
+      </div>
+      <span class="text-xl font-bold tracking-tight">ZetaStream</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-6">
+      <a
+        href="#home"
+        class="text-sm font-medium hover:text-purple-400 transition-colors">
+        Inicio
+      </a>
+      <a
+        href="#schedule"
+        class="text-sm font-medium hover:text-purple-400 transition-colors">
+        Horarios
+      </a>
+      <a
+        href="#clips"
+        class="text-sm font-medium hover:text-purple-400 transition-colors">
+        Clips
+      </a>
+      <a
+        href="#blog"
+        class="text-sm font-medium hover:text-purple-400 transition-colors">
+        Blog
+      </a>
+      <a
+        href="#contact"
+        class="text-sm font-medium hover:text-purple-400 transition-colors">
+        Contacto
+      </a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer">
+        <Twitch
+          class="h-5 w-5 text-purple-400 hover:text-purple-300 transition-colors"
+        />
+        <span class="sr-only">Twitch</span>
+      </a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <Youtube
+          class="h-5 w-5 text-purple-400 hover:text-purple-300 transition-colors"
+        />
+        <span class="sr-only">YouTube</span>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <Twitter
+          class="h-5 w-5 text-purple-400 hover:text-purple-300 transition-colors"
+        />
+        <span class="sr-only">Twitter</span>
+      </a>
+      <button
+        class="hidden rounded-full bg-gradient-to-br from-purple-600 to-pink-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gradient-to-bl md:block">
+        Donar</button
+      >
+    </div>
+  </div>
+</header>
