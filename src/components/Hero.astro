@@ -1,0 +1,35 @@
+---
+import Twitch from "./svg/Twitch.astro";
+---
+<section
+  id="home"
+  class="relative overflow-hidden py-20 md:py-32 flex flex-col items-center justify-center">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-black">
+  </div>
+  <div
+    class="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-10">
+  </div>
+  <div class="container relative z-10 flex flex-col items-center text-center">
+    <h1
+      class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      ZetaStream
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+      Gameplay, risas y comunidad. Donde cada stream es una aventura.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a
+        href="https://www.twitch.tv/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-white flex bg-purple-600 hover:bg-purple-700 py-2 px-3 rounded-md">
+        <Twitch class="mr-2 w-5" />
+        Sígueme en Twitch
+      </a>
+      <button
+        class="border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 py-2 px-3 rounded-md">
+        Ver últimos clips
+      </button>
+    </div>
+  </div>
+</section>
