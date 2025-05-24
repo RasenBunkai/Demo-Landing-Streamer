@@ -1,0 +1,34 @@
+---
+import Paypal from "./svg/Paypal.astro";
+import Kofi from "./svg/Kofi.astro";
+---
+
+<section
+  class="py-12 bg-gradient-to-b from-purple-900 via-slate-950 to-black px-4 mx-auto">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2
+      class="text-4xl leading-tight font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      ¿Te gusta mi contenido?
+    </h2>
+    <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+      Tu apoyo me ayuda a seguir creando contenido de calidad. ¡Cualquier
+      donación es muy apreciada y me motiva a seguir mejorando!
+    </p>
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a
+        href="https://www.paypal.com/"
+        class="donation-button bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500">
+        <Paypal class="h-5 w-5 mr-2" />
+        Donar con PayPal
+      </a>
+      <a
+        href="https://ko-fi.com/"
+        class="donation-button bg-gradient-to-br from-teal-500 to-teal-600 hover:from-teal-400 hover:to-teal-500">
+        <Kofi class="mr-2" />
+        Invítame a un café
+      </a>
+    </div>
+  </div>
+</section>
+
+<style></style>
