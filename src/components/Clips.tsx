@@ -29,7 +29,7 @@ export default function FeaturedClips({
         <button
           type="button"
           onClick={() => setActiveTab("recent")}
-          className={`px-6 py-2 rounded-l-lg font-semibold transition-colors cursor-pointer min-w-lg border border-purple-900/50 ${
+          className={`px-6 py-2 rounded-l-lg font-semibold transition-colors cursor-pointer w-lg border border-purple-900/50 ${
             activeTab === "recent"
               ? "bg-slate-700 text-white"
               : "bg-slate-900 text-gray-500"
@@ -40,7 +40,7 @@ export default function FeaturedClips({
         <button
           type="button"
           onClick={() => setActiveTab("popular")}
-          className={`bg-gradient-to-r from-slate-800 to-gray-900 px-6 py-2 rounded-r-lg font-semibold transition-colors cursor-pointer min-w-lg ${
+          className={`bg-gradient-to-r from-slate-800 to-gray-900 px-6 py-2 rounded-r-lg font-semibold transition-colors cursor-pointer w-lg ${
             activeTab === "popular"
               ? "bg-slate-700 text-white "
               : "bg-slate-900 text-gray-500"

@@ -25,3 +25,12 @@
     outline: none;
     box-shadow: 0 0 0 2px #a78bfa, 0 0 0 4px #000;
 }
+.card-container {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .card-container:hover {
+    transform: translateY(-4px);
+  }

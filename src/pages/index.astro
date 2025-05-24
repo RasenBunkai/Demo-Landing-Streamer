@@ -5,6 +5,7 @@ import Hero from "../components/Hero.astro";
 import Schedule from "../components/Schedule.astro";
 import Clips from "../components/Clips.tsx";
 import Donations from "../components/Donations.astro";
+import Blog from "../components/Blog.astro";
 
 const recentClips = [
   {
@@ -43,4 +44,5 @@ const popularClips = [
   <Schedule />
   <Clips client:visible recentClips={recentClips} popularClips={popularClips} />
   <Donations />
+  <Blog />
 </Layout>
