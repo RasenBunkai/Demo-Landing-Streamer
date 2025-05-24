@@ -1,14 +1,44 @@
 ---
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Schedule from '../components/Schedule.astro';
-import Clips from '../components/Clips.astro';
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Schedule from "../components/Schedule.astro";
+import Clips from "../components/Clips.tsx";
+
+const recentClips = [
+  {
+    id: "clip1",
+    title: "Clip Reciente 1",
+    embedUrl:
+      "https://clips.twitch.tv/embed?clip=NeighborlyHeartlessEndiveFloof-sbVFmKn-FOEPc5-m&parent=localhost",
+  },
+  {
+    id: "clip2",
+    title: "Clip Reciente 2",
+    embedUrl:
+      "https://clips.twitch.tv/embed?clip=TsundereCheerfulCroquetteKappa-mN3mT_obPbcxRvmu&parent=localhost",
+  },
+];
+
+const popularClips = [
+  {
+    id: "clip3",
+    title: "Clip Popular 1",
+    embedUrl:
+      "https://clips.twitch.tv/embed?clip=NeighborlyHeartlessEndiveFloof-sbVFmKn-FOEPc5-m&parent=localhost",
+  },
+  {
+    id: "clip4",
+    title: "Clip Popular 2",
+    embedUrl:
+      "https://clips.twitch.tv/embed?clip=FairVibrantMouseDatBoi-X0379XWCLPso8CKR&parent=localhost",
+  },
+];
 ---
 
 <Layout>
-	<Header/>
-	<Hero/>
-	<Schedule/>
-	<Clips/>
+  <Header />
+  <Hero />
+  <Schedule />
+  <Clips client:visible recentClips={recentClips} popularClips={popularClips} />
 </Layout>
