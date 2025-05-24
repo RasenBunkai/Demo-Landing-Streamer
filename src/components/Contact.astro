@@ -1,0 +1,29 @@
+---
+import Email from "./svg/Email.astro";
+---
+
+<section id="contact" class="py-12 bg-black">
+  <div class="container justify-center mx-auto max-w-3xl text-center">
+    <div class="">
+      <h2
+        class="text-3xl leading-tight font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+        Contacto
+      </h2>
+      <p class="text-gray-300 mb-8 font-medium">
+        ¿Tienes alguna propuesta de colaboración o quieres contactarme por otro
+        motivo? Escríbeme a:
+      </p>
+      <div
+        class="inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r from-slate-800 to-gray-900 border border-purple-900/50 rounded-lg">
+        <Email class="text-purple-400" />
+        <a
+          href="mailto:contacto@zetastream.com?Subject=Propuesta de colaboracion"
+          class="text-lg font-medium text-white">contacto@zetastream.com</a
+        >
+      </div>
+      <p class="text-gray-400 mt-6 text-sm font-medium">
+        Responderé a tu mensaje lo antes posible, normalmente en 24-48 horas.
+      </p>
+    </div>
+  </div>
+</section>
