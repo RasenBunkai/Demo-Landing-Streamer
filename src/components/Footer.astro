@@ -1,0 +1,64 @@
+---
+import Twitch from "./svg/Twitch.astro";
+import Youtube from "./svg/Youtube.astro";
+import Twitter from "./svg/Twitter.astro";
+---
+
+<footer class="border-t border-purple-900/20 bg-black backdrop-blur-sm py-8">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Logo y marca -->
+      <a
+        href="/"
+        class="group flex items-center gap-2 hover:opacity-90 transition-opacity">
+        <div
+          class="relative h-9 w-9 transition-transform duration-300 group-hover:rotate-6">
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 shadow-md">
+          </div>
+          <div
+            class="absolute inset-[2px] flex items-center justify-center rounded-full bg-black text-lg font-bold text-purple-400">
+            Z
+          </div>
+        </div>
+        <span
+          class="text-xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          ZetaStream
+        </span>
+      </a>
+
+      <!-- Redes sociales -->
+      <div class="flex items-center gap-6">
+        <a
+          href="https://twitch.tv"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+          aria-label="Twitch">
+          <Twitch class="size-5" />
+        </a>
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+          aria-label="YouTube">
+          <Youtube class="size-5" />
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+          aria-label="Twitter">
+          <Twitter class="size-5" />
+        </a>
+      </div>
+
+      <!-- Derechos de autor -->
+      <div class="text-sm text-gray-400 hover:text-white transition-colors">
+        © {new Date().getFullYear()} ZetaStream. Todos los derechos reservados.
+      </div>
+    </div>
+  </div>
+</footer>

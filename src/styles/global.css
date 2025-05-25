@@ -34,3 +34,15 @@
   .card-container:hover {
     transform: translateY(-4px);
   }
+
+  .social-icon {
+    padding: 0.5rem;
+    transition: all 0.3s;
+  }
+  .social-icon:hover {
+    transform: translateY(-0.25rem);
+
+  }
+  .social-icon:focus {
+    outline: none;
+  }
