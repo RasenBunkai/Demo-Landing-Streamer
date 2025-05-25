@@ -21,7 +21,7 @@ export default function FeaturedClips({
     activeTab === "recent" ? recentClips.slice(0, 2) : popularClips.slice(0, 2);
 
   return (
-    <section className="text-center px-4 py-8 bg-gradient-to-t from-purple-900 via-slate-950 to-black text-white">
+    <section id="clips" className="text-center px-4 py-8 bg-gradient-to-t from-purple-900 via-slate-950 to-black text-white">
       <h2 className="text-4xl leading-tight font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
         Clips Destacados
       </h2>
