@@ -1,5 +1,32 @@
 ---
 import Card from "./Card.astro";
+
+const card = [
+  {
+    title: "Mi setup gaming completo",
+    date: "15 de mayo, 2023",
+    description:
+      "En este artículo te muestro todos los componentes de mi setup gaming, desde el PC hasta los periféricos y la iluminación que uso para mis streams.",
+    imageUrl: "/placeholder.svg",
+    linkUrl: "/blog/mi-setup-gaming",
+  },
+  {
+    title: "Mis juegos favoritos",
+    date: "10 de abril, 2023",
+    description:
+      "Aquí te cuento sobre mis juegos favoritos y por qué me gustan tanto. Desde shooters hasta RPGs, hay algo para todos los gustos.",
+    imageUrl: "/placeholder.svg",
+    linkUrl: "/blog/mis-juegos-favoritos",
+  },
+  {
+    title: "Mis mejores momentos en Twitch",
+    date: "5 de marzo, 2023",
+    description:
+      "Revive algunos de mis mejores momentos en Twitch, desde partidas épicas hasta risas inolvidables. ¡No te lo pierdas!",
+    imageUrl: "/placeholder.svg",
+    linkUrl: "/blog/mis-mejores-momentos-en-twitch",
+  },
+];
 ---
 
 <section
@@ -7,35 +34,22 @@ import Card from "./Card.astro";
   class="py-16 bg-gradient-to-b from-black via-slate-950/95 to-purple-950">
   <div class="container justify-center mx-auto">
     <h2
-      class="text-3xl font-bold mb-8 text-center leading-tight bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      class="text-4xl font-semibold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent leading-tight tracking-tight w-full text-pretty">
       Blog
     </h2>
     <div
-      class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-      <Card
-        title="Mi setup gaming completo"
-        date="15 de mayo, 2023"
-        description="En este artículo te muestro todos los componentes de mi setup gaming, desde el PC hasta los periféricos y la iluminación que uso para mis streams."
-        imageUrl="/Card_Placeholder.png"
-        imageAlt="Mi setup gaming"
-        linkUrl="/blog/mi-setup-gaming"
-      />
-      <Card
-        title="Mis juegos favoritos"
-        date="10 de abril, 2023"
-        description="Aquí te cuento sobre mis juegos favoritos y por qué me gustan tanto. Desde shooters hasta RPGs, hay algo para todos los gustos."
-        imageUrl="/Card_Placeholder.png"
-        imageAlt="Mis juegos favoritos"
-        linkUrl="/blog/mis-juegos-favoritos"
-      />
-      <Card
-        title="Mis mejores momentos en Twitch"
-        date="5 de marzo, 2023"
-        description="Revive algunos de mis mejores momentos en Twitch, desde partidas épicas hasta risas inolvidables. ¡No te lo pierdas!"
-        imageUrl="/Card_Placeholder.png"
-        imageAlt="Mis mejores momentos en Twitch"
-        linkUrl="/blog/mis-mejores-momentos-en-twitch"
-      />
+      class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
+      {
+        card.map((map) => (
+          <Card
+            title={map.title}
+            date={map.date}
+            description={map.description}
+            imageUrl="/placeholder.svg"
+            linkUrl={map.linkUrl}
+          />
+        ))
+      }
     </div>
   </div>
 </section>

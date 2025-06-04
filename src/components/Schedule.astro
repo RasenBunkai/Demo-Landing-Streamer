@@ -1,41 +1,36 @@
 ---
 import ScheduleCard from "./ScheduleCard.astro";
+
+const schedule = [
+  {day: "Lunes", time: "9:00 PM", activity: "Noche de Minecraft"},
+  {day: "Martes", time: "8:00 PM", activity: "Noche de Valorant"},
+  {day: "Miércoles", time: "8:00 PM", activity: "Noche de Minecraft"},
+  {day: "Jueves", time: "9:00 PM", activity: "Noche de Among Us"},
+  {day: "Viernes", time: "10:00 PM", activity: "Noche de Valorant"},
+];
 ---
 
 <section
   id="schedule"
   class="flex flex-col justify-center py-16 bg-black gap-5">
   <h2
-    class="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Horario de Streams
+    class="text-4xl font-semibold mb-8 text-center leading-tight bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent tracking-tight w-full text-pretty">
+    Horario de Streams
   </h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-full mx-auto px-4">
-    <ScheduleCard
-      CardTitle="Lunes"
-      CardDate="9:00 PM"
-      CardContent="Noche de Minecraft"
-    />
-    <ScheduleCard
-      CardTitle="Martes"
-      CardDate="8:00 PM"
-      CardContent="Noche de Valorant"
-    />
-    <ScheduleCard
-      CardTitle="Miércoles"
-      CardDate="8:00 PM"
-      CardContent="Noche de Valorant"
-    />
-    <ScheduleCard
-      CardTitle="Jueves"
-      CardDate="9:00 PM"
-      CardContent="Noche de Minecraft"
-    />
-    <ScheduleCard
-      CardTitle="Viernes"
-      CardDate="10:00 PM"
-      CardContent="Noche de Among Us"
-    />
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-full mx-auto px-4">
+    {
+      schedule.map((schedule) => (
+        <ScheduleCard
+          CardTitle={schedule.day}
+          CardDate={schedule.time}
+          CardContent={schedule.activity}
+        />
+      ))
+    }
   </div>
-  <p class="text-center font-semibold mt-8 text-gray-400">
+  <p
+    class="text-center font-semibold mt-8 text-gray-400 mb-8 w-full sm:text-center text-normal tracking-tighter text-balance">
     Todos los horarios están en hora de España (CET/CEST)
   </p>
 </section>

@@ -1,20 +1,22 @@
 ---
 import Twitch from "./svg/Twitch.astro";
 ---
+
 <section
   id="home"
   class="relative overflow-hidden py-20 md:py-32 flex flex-col items-center justify-center">
   <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-black">
   </div>
   <div
-    class="absolute inset-0 bg-[url('/KitsuneRush.jpeg?height=1080&width=1920')] bg-cover bg-center opacity-10">
+    class="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-10">
   </div>
   <div class="container relative z-10 flex flex-col items-center text-center">
     <h1
-      class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+      class="text-7xl font-semibold tracking-tight mb-4 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent w-full max-w-xl sm:text-center text-pretty leading-tight">
       ZetaStream
     </h1>
-    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+    <p
+      class="text-xl md:text-2xl text-gray-300 mb-8 w-full sm:text-center text-normal sm:text-lg font-light tracking-tighter text-balance">
       Gameplay, risas y comunidad. Donde cada stream es una aventura.
     </p>
     <div class="flex flex-wrap gap-4 justify-center">
@@ -22,13 +24,13 @@ import Twitch from "./svg/Twitch.astro";
         href="https://www.twitch.tv/"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-white flex bg-purple-600 hover:bg-purple-700 py-2 px-3 rounded-md transition duration-300">
+        class="text-white font-medium flex bg-purple-600 hover:bg-purple-700 py-2 px-3 rounded-md transition-colors duration-300">
         <Twitch class="mr-2 w-5" />
         Sígueme en Twitch
       </a>
       <a
         href="#clips"
-        class="border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 py-2 px-3 rounded-md transition duration-300">
+        class="font-medium border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-100 py-2 px-3 rounded-md transition-colors duration-300">
         Ver últimos clips
       </a>
     </div>

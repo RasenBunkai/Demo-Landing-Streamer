@@ -1,5 +1,4 @@
 ---
-// src/components/Card.astro
 import Image from "astro/components/Image.astro";
 import ExternalLink from "./svg/ExternalLink.astro";
 
@@ -8,45 +7,44 @@ interface Props {
   date: string;
   description: string;
   imageUrl: string;
-  imageAlt: string;
   linkUrl: string;
 }
 
-const {title, date, description, imageUrl, imageAlt, linkUrl} = Astro.props;
+const {title, date, description, imageUrl, linkUrl} = Astro.props;
 ---
 
 <div
-  class="card-container bg-gray-900 border border-purple-900/50 rounded-lg overflow-hidden transition-all hover:shadow-lg hover:shadow-purple-900/20">
-  <div class="h-48 overflow-hidden">
+  class="group flex flex-col bg-gray-900 border border-purple-900/50 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-purple-900/20 shadow hover:-translate-y-2 transition-all">
+  <div class="h-52 overflow-hidden">
     <Image
       src={imageUrl}
-      alt={imageAlt}
-      width={800}
-      height={400}
-      class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+      alt="BlogImage"
+      width="800"
+      height="400"
+      class="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
       loading="lazy"
       draggable="false"
     />
   </div>
-  <div class="p-6 space-y-4">
-    <div>
-      <h3
-        class="text-2xl font-semibold leading-tight tracking-tight text-purple-400">
-        {title}
-      </h3>
-      <p class="text-gray-400 text-sm mt-1">
-        Publicado el {date}
-      </p>
-    </div>
-    <p class="text-gray-300 line-clamp-3">
+  <div class="flex-1 space-y-3 p-5">
+    <h3
+      class="text-2xl font-semibold leading-tight tracking-tight text-purple-400 mb-2 text-pretty pointer-events-none">
+      {title}
+    </h3>
+    <p class="text-gray-400 text-sm mb-2 pointer-events-none">
+      Publicado el {date}
+    </p>
+    <p
+      class="text-gray-300 line-clamp-3 text-md leading-tight mb-2 text-pretty pointer-events-none">
       {description}
     </p>
-    <div class="pt-2">
+    <div class="flex space-x-2 p-2">
       <a
         href={linkUrl}
-        class="inline-flex items-center text-purple-400 hover:text-purple-300 underline-offset-4 hover:underline transition-colors">
+        rel="noopener noreferrer"
+        class="hover:translate-x-1 inline-flex items-center mt-4 text-purple-400 hover:text-purple-300 underline-offset-4 hover:underline transition-all">
         Leer más
-        <ExternalLink class="ml-2 h-4 w-4" />
+        <ExternalLink class="ml-2 size-4" />
       </a>
     </div>
   </div>

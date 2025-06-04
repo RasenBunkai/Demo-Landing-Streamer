@@ -21,8 +21,10 @@ export default function FeaturedClips({
     activeTab === "recent" ? recentClips.slice(0, 2) : popularClips.slice(0, 2);
 
   return (
-    <section id="clips" className="text-center px-4 py-8 bg-gradient-to-t from-purple-900 via-slate-950 to-black text-white">
-      <h2 className="text-4xl leading-tight font-bold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+    <section
+      id="clips"
+      className="text-center px-4 py-8 bg-gradient-to-t from-purple-900 via-slate-950 to-black text-white">
+      <h2 className="text-4xl font-semibold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent leading-tight tracking-tight w-full text-pretty">
         Clips Destacados
       </h2>
       <div className="flex justify-center mb-6">
@@ -71,7 +73,7 @@ export default function FeaturedClips({
           href="https://www.twitch.tv/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition duration-300">
+          className="font-medium inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-purple-500 text-purple-400 hover:bg-purple-400 hover:border-white hover:text-white transition duration-300">
           <svg
             className="h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
