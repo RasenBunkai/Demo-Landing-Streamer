@@ -1,23 +1,19 @@
 ---
 import "../styles/global.css";
-import NavBar from "../components/NavBar.astro";
-import Footer from "../components/Footer.astro";
+const {title} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
-    <title>ZetaStream | Your streamer website</title>
+    <title>ZetaStream | {title}</title>
   </head>
   <body>
-    <NavBar />
     <slot />
-    <Footer />
   </body>
 </html>
 

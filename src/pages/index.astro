@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 
 import Hero from "../components/Hero.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
 import Schedule from "../components/Schedule.astro";
 import Clips from "../components/Clips.tsx";
 import Donations from "../components/Donations.astro";
@@ -39,11 +41,13 @@ const popularClips = [
 ];
 ---
 
-<Layout>
+<Layout title="Your streamer website">
+  <NavBar />
   <Hero />
   <Schedule />
   <Clips client:visible recentClips={recentClips} popularClips={popularClips} />
   <Donations />
   <Blog />
   <Contact />
+  <Footer />
 </Layout>

@@ -24,9 +24,12 @@ import Twitch from "./svg/Twitch.astro";
         href="https://www.twitch.tv/"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-white font-medium flex bg-purple-600 hover:bg-purple-700 py-2 px-3 rounded-md transition-colors duration-300">
+        class="text-white font-medium flex bg-purple-600 hover:bg-purple-700 py-2 px-3 rounded-md transition-colors duration-300 relative animate-pulse-ping">
         <Twitch class="mr-2 w-5" />
         Sígueme en Twitch
+        <span
+          class="absolute inset-0 rounded-md border-4 border-purple-900 animate-ping pointer-events-none"
+        ></span>
       </a>
       <a
         href="#clips"

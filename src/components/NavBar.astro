@@ -2,68 +2,67 @@
 import Twitch from "./svg/Twitch.astro";
 import Youtube from "./svg/Youtube.astro";
 import Twitter from "./svg/Twitter.astro";
----
+import Tiktok from "./svg/Tiktok.astro";
 
-<!-- los SVG's utilizados en este componente fueron sacados de la librería https://svgl.app/ -->
+const navLinks = [
+  {label: "Inicio", href: "#home"},
+  {label: "Horarios", href: "#schedule"},
+  {label: "Clips", href: "#clips"},
+  {label: "Blog", href: "#blog"},
+  {label: "Contacto", href: "#contact"},
+];
+const socialLinks = [
+  {name: "Twitch", icon: Twitch, url: "https://www.twitch.tv/",size: "w-5 h-5",},
+  {name: "YouTube", icon: Youtube, url: "https://youtube.com", size: "w-6 h-6"},
+  {name: "Twitter", icon: Twitter, url: "https://twitter.com", size: "w-5 h-5"},
+  {name: "Tiktok", icon: Tiktok, url: "https://www.tiktok.com/", size: "w-5 h-5",},
+];
+---
 <nav
+  aria-label="Navegación principal"
   class="text-white sticky top-0 z-50 w-full border-b border-purple-900/20 bg-black backdrop-blur-lg">
   <div
     class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
-    <div class="flex items-center gap-3">
-      <a
-        href="#home"
-        class="group flex items-center gap-2 focus-visible:outline-none">
-        <div class="relative h-8 w-8">
-          <div
-            class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-600 to-pink-500">
-          </div>
-          <div
-            class="absolute inset-[2px] flex items-center justify-center rounded-full bg-black text-lg font-bold text-purple-400">
-            Z
-          </div>
+    <!-- Logo y nombre -->
+    <a
+      href="#home"
+      class="group flex items-center gap-2 focus-visible:outline-none">
+      <div class="relative h-8 w-8">
+        <div
+          class="absolute inset-0 rounded-full bg-gradient-to-br from-purple-600 to-pink-500">
         </div>
-        <span class="text-xl font-bold tracking-tight text-white">
-          ZetaStream
-        </span>
-      </a>
-    </div>
-    <nav
-      class="hidden md:flex items-center gap-3 text-sm font-medium transition-colors">
-      <a href="#home" class="px-2 hover:text-purple-400 hover:translate-y-1 transition" aria-current="page">
-        Inicio
-      </a>
-      <a href="#schedule" class="px-2 hover:text-purple-400 hover:translate-y-1 transition"> Horarios </a>
-      <a href="#clips" class="px-2 hover:text-purple-400 hover:translate-y-1 transition"> Clips </a>
-      <a href="#blog" class="px-2 hover:text-purple-400 hover:translate-y-1 transition"> Blog </a>
-      <a href="#contact" class="px-2 hover:text-purple-400 hover:translate-y-1 transition"> Contacto </a>
-    </nav>
-
-    <!-- Redes sociales y CTA -->
+        <div
+          class="absolute inset-[2px] flex items-center justify-center rounded-full bg-black text-lg font-bold text-purple-400">
+          Z
+        </div>
+      </div>
+      <span class="text-xl font-bold tracking-tight text-white">ZetaStream</span
+      >
+    </a>
+    <!-- Enlaces de navegación -->
+    <ul class="hidden md:flex items-center gap-4 text-sm font-medium">
+      {
+        navLinks.map(({href, label}) => (
+          <li>
+            <a
+              href={href}
+              class="px-2 hover:text-purple-400 hover:translate-y-[2px] transition">
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <!-- Redes sociales + CTA -->
     <div class="flex items-center gap-4">
-      <a
-        href="https://www.twitch.tv/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="">
-        <Twitch class="w-5 hover:-translate-y-1 transition" />
-        <span class="sr-only">Twitch</span>
-      </a>
-      <a
-        href="https://youtube.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="">
-        <Youtube class="w-6 hover:-translate-y-1 transition" />
-        <span class="sr-only">YouTube</span>
-      </a>
-      <a
-        href="https://twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="">
-        <Twitter class="w-5 hover:-translate-y-1 transition" />
-        <span class="sr-only">Twitter</span>
-      </a>
+      {
+        socialLinks.map(({name, icon: Icon, url, size}) => (
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <Icon class={`${size} hover:translate-y-[2px] transition`} />
+            <span class="sr-only">{name}</span>
+          </a>
+        ))
+      }
       <button
         class="font-semibold px-3 py-2 border border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 rounded-md cursor-pointer transition-colors duration-200">
         Donar
