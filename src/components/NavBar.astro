@@ -12,15 +12,26 @@ const navLinks = [
   {label: "Contacto", href: "#contact"},
 ];
 const socialLinks = [
-  {name: "Twitch", icon: Twitch, url: "https://www.twitch.tv/",size: "w-5 h-5",},
-  {name: "YouTube", icon: Youtube, url: "https://youtube.com", size: "w-6 h-6"},
-  {name: "Twitter", icon: Twitter, url: "https://twitter.com", size: "w-5 h-5"},
-  {name: "Tiktok", icon: Tiktok, url: "https://www.tiktok.com/", size: "w-5 h-5",},
+  {
+    name: "Twitch",
+    icon: Twitch,
+    url: "https://www.twitch.tv/",
+    size: "size-5",
+  },
+  {name: "YouTube", icon: Youtube, url: "https://youtube.com", size: "size-6"},
+  {name: "Twitter", icon: Twitter, url: "https://twitter.com", size: "size-5"},
+  {
+    name: "Tiktok",
+    icon: Tiktok,
+    url: "https://www.tiktok.com/",
+    size: "size-5",
+  },
 ];
 ---
+
 <nav
   aria-label="Navegación principal"
-  class="text-white sticky top-0 z-50 w-full border-b border-purple-900/20 bg-black backdrop-blur-lg">
+  class="text-white sticky top-0 z-50 w-full border-b border-purple-900/80 bg-black backdrop-blur-lg">
   <div
     class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
     <!-- Logo y nombre -->
@@ -63,10 +74,13 @@ const socialLinks = [
           </a>
         ))
       }
-      <button
-        class="font-semibold px-3 py-2 border border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 rounded-md cursor-pointer transition-colors duration-200">
-        Donar
-      </button>
+      <a
+        href="https://streamelements.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold px-3 py-2 border border-purple-600 text-purple-400 hover:bg-purple-950 hover:text-purple-300 rounded-md cursor-pointer transition-colors duration-200"
+        >Donar</a
+      >
     </div>
   </div>
 </nav>

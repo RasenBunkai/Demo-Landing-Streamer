@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {ClipSkeleton} from "./Skeleton";
 
 type Clip = {
   id: string;
@@ -16,6 +17,30 @@ export default function FeaturedClips({
   popularClips,
 }: FeaturedClipsProps) {
   const [activeTab, setActiveTab] = useState<"recent" | "popular">("popular");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isTabChanging, setIsTabChanging] = useState(false);
+
+  useEffect(() => {
+    // Simular carga de datos
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleTabChange = (tab: "recent" | "popular") => {
+    if (tab !== activeTab) {
+      setIsTabChanging(true);
+      setActiveTab(tab);
+
+      // Simular tiempo de carga al cambiar pestaña
+      setTimeout(() => {
+        setIsTabChanging(false);
+      }, 950); // Tiempo más corto que la carga inicial
+    }
+  };
+
 
   const clipsToShow =
     activeTab === "recent" ? recentClips.slice(0, 2) : popularClips.slice(0, 2);
@@ -27,45 +52,57 @@ export default function FeaturedClips({
       <h2 className="text-4xl font-semibold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent leading-tight tracking-tight w-full text-pretty">
         Clips Destacados
       </h2>
+
       <div className="flex justify-center mb-6">
         <button
           type="button"
-          onClick={() => setActiveTab("recent")}
+          onClick={() => handleTabChange("recent")}
           className={`px-6 py-2 rounded-l-lg font-semibold transition-colors cursor-pointer w-lg border border-purple-900/50 ${
             activeTab === "recent"
               ? "bg-slate-700 text-white"
               : "bg-slate-900 text-gray-500"
           }`}
+          disabled={isTabChanging}
           aria-pressed={activeTab === "recent"}>
           Recientes
         </button>
         <button
           type="button"
-          onClick={() => setActiveTab("popular")}
+          onClick={() => handleTabChange("popular")}
           className={`bg-gradient-to-r from-slate-800 to-gray-900 px-6 py-2 rounded-r-lg font-semibold transition-colors cursor-pointer w-lg ${
             activeTab === "popular"
               ? "bg-slate-700 text-white "
               : "bg-slate-900 text-gray-500"
           }`}
+          disabled={isTabChanging}
           aria-pressed={activeTab === "popular"}>
           Populares
         </button>
       </div>
 
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
-        {clipsToShow.map((clip) => (
-          <div
-            key={clip.id}
-            className="w-96 h-60 mx-auto rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              className="w-full h-full"
-              src={clip.embedUrl}
-              title={clip.title}
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
-        ))}
+        {isLoading || isTabChanging ? (
+          // Mostrar skeletons mientras carga
+          <>
+            <ClipSkeleton />
+            <ClipSkeleton />
+          </>
+        ) : (
+          // Mostrar clips cuando ya están cargados
+          clipsToShow.map((clip) => (
+            <div
+              key={clip.id}
+              className="w-96 h-60 mx-auto rounded-lg overflow-hidden shadow-lg transition-opacity duration-300 opacity-0 animate-fadeIn">
+              <iframe
+                className="w-full h-full"
+                src={clip.embedUrl}
+                title={clip.title}
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          ))
+        )}
       </div>
 
       <div className="mt-8">
